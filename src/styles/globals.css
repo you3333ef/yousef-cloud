@@ -18,10 +18,6 @@
     --syrian-neutral-dark: #3d3a3b;
   }
 
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-syrian-sand text-syrian-neutral-dark font-arabic antialiased;
     direction: rtl;
