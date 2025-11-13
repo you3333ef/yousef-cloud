@@ -1,0 +1,5 @@
+{
+  "build_command": "pnpm run build",
+  "output_directory": "build/client",
+  "install_command": "pnpm install --frozen-lockfile"
+}

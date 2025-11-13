@@ -1,0 +1,11 @@
+name = "syrian-dev-platform"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "./build/client"
+
+# Git integration for automatic deployments
+[env.production]
+name = "syrian-dev-platform"
+compatibility_date = "2025-01-01"
+
+[env.production.vars]
+ENVIRONMENT = "production"
