@@ -8,7 +8,6 @@ import {
   Info,
   Menu,
   X,
-  Sparkles,
   Terminal,
 } from 'lucide-react';
 import AIAssistant from './components/ai/AIAssistant';
