@@ -1,5 +1,5 @@
 {
-  "build_command": "pnpm run build",
+  "build_command": "npm run build",
   "output_directory": "build/client",
-  "install_command": "pnpm install --frozen-lockfile"
+  "install_command": "npm ci"
 }
