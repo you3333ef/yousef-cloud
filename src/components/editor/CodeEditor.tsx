@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Editor from '@monaco-editor/react';
-import { Play, Save, Download, Upload, FileCode, Settings } from 'lucide-react';
+import { Save, Upload, FileCode, Settings } from 'lucide-react';
 
 const LANGUAGES = [
   { id: 'javascript', name: 'JavaScript', ext: 'js' },

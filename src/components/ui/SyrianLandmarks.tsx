@@ -4,7 +4,7 @@ interface LandmarkProps {
   className?: string;
 }
 
-function LandmarkIcon({ name, description, className = "" }: LandmarkProps) {
+function LandmarkIcon({ name, description: _desc, className = "" }: LandmarkProps) {
   const landmarks: Record<string, JSX.Element> = {
     "قلعة حلب": (
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className={className}>
