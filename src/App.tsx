@@ -10,10 +10,7 @@ import {
   X,
   Terminal,
 } from 'lucide-react';
-import AIAssistant from './components/ai/AIAssistant';
 import CodeEditor from './components/editor/CodeEditor';
-import InfrastructureAutomation from './components/infrastructure/InfrastructureAutomation';
-import PackageManager from './components/packages/PackageManager';
 import { SyrianEagle } from './components/ui';
 
 function HomePage() {
