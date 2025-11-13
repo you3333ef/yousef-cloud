@@ -146,4 +146,68 @@
   .rtl-flip {
     transform: scaleX(-1);
   }
+
+  /* Animations matching bolt.diy */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Modern scrollbar */
+  .modern-scrollbar {
+    overflow: auto;
+  }
+
+  .modern-scrollbar::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+  }
+
+  .modern-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .modern-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .modern-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .modern-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  }
 }
