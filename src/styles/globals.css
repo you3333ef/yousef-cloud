@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --syrian-primary: #054239;
+    --syrian-primary-light: #428177;
+    --syrian-primary-dark: #002623;
+    --syrian-secondary: #b9a779;
+    --syrian-secondary-light: #edebe0;
+    --syrian-secondary-dark: #988561;
+    --syrian-accent: #6b1f2a;
+    --syrian-neutral-light: #ffffff;
+    --syrian-neutral-dark: #3d3a3b;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-syrian-sand text-syrian-neutral-dark font-arabic antialiased;
+    direction: rtl;
+  }
+
+  html {
+    direction: rtl;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-syrian text-white rounded-modern font-semibold
+           hover:shadow-syrian-md transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-syrian-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-syrian-secondary text-syrian-primary-dark rounded-modern font-semibold
+           hover:bg-syrian-secondary-dark transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-syrian-secondary focus:ring-offset-2;
+  }
+
+  .card {
+    @apply bg-white rounded-modern-lg p-6 shadow-syrian
+           hover:shadow-syrian-lg transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-syrian-secondary-light rounded-modern
+           focus:border-syrian-primary focus:ring-2 focus:ring-syrian-primary/20
+           transition-all duration-200 font-arabic;
+  }
+
+  .sidebar-nav {
+    @apply flex flex-col gap-2;
+  }
+
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-modern text-syrian-neutral-dark
+           hover:bg-syrian-secondary-light transition-all duration-200
+           hover:text-syrian-primary font-medium;
+  }
+
+  .sidebar-nav-item.active {
+    @apply bg-gradient-syrian text-white shadow-syrian;
+  }
+
+  .code-editor {
+    @apply border-2 border-syrian-secondary-light rounded-modern overflow-hidden
+           focus-within:border-syrian-primary focus-within:ring-2 focus-within:ring-syrian-primary/20
+           transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient-syrian {
+    @apply bg-gradient-to-l from-syrian-primary to-syrian-primaryLight bg-clip-text text-transparent;
+  }
+
+  .text-gradient-gold {
+    @apply bg-gradient-to-l from-syrian-secondary to-syrian-secondaryDark bg-clip-text text-transparent;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+}
