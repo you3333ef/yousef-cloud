@@ -19,8 +19,9 @@
   }
 
   body {
-    @apply bg-syrian-sand text-syrian-neutral-dark font-arabic antialiased;
+    @apply bg-syrian-sand text-gray-700 font-arabic antialiased;
     direction: rtl;
+    color: #3d3a3b;
   }
 
   html {
@@ -36,9 +37,10 @@
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-syrian-secondary text-syrian-primary-dark rounded-modern font-semibold
+    @apply px-6 py-3 bg-syrian-secondary rounded-modern font-semibold
            hover:bg-syrian-secondary-dark transition-all duration-300
            focus:outline-none focus:ring-2 focus:ring-syrian-secondary focus:ring-offset-2;
+    color: #002623;
   }
 
   .card {
@@ -57,9 +59,14 @@
   }
 
   .sidebar-nav-item {
-    @apply flex items-center gap-3 px-4 py-3 rounded-modern text-syrian-neutral-dark
+    @apply flex items-center gap-3 px-4 py-3 rounded-modern
            hover:bg-syrian-secondary-light transition-all duration-200
-           hover:text-syrian-primary font-medium;
+           font-medium;
+    color: #3d3a3b;
+  }
+
+  .sidebar-nav-item:hover {
+    color: #054239;
   }
 
   .sidebar-nav-item.active {
