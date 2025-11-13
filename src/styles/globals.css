@@ -19,10 +19,10 @@
   }
 
   body {
-    @apply bg-slate-50 text-gray-700 font-arabic antialiased;
+    @apply bg-gray-950 text-gray-100 font-arabic antialiased;
     direction: rtl;
-    color: #3d3a3b;
-    background-color: #edebe0;
+    color: #e5e7eb;
+    background-color: #030712;
   }
 
   html {
@@ -32,44 +32,58 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 text-white rounded-modern font-semibold
+    @apply px-6 py-3 text-white rounded-lg font-semibold
            hover:shadow-lg transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-offset-2;
-    background: linear-gradient(135deg, #054239 0%, #428177 100%);
-    border-color: #054239;
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border: 1px solid rgba(16, 185, 129, 0.3);
   }
 
   .btn-primary:hover {
-    box-shadow: 0 6px 30px rgba(5, 66, 57, 0.18);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    box-shadow: 0 6px 30px rgba(16, 185, 129, 0.3);
   }
 
   .btn-secondary {
-    @apply px-6 py-3 rounded-modern font-semibold
-           hover:bg-syrian-secondary-dark transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-offset-2;
-    background-color: #b9a779;
-    color: #002623;
+    @apply px-6 py-3 rounded-lg font-semibold
+           transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-700;
+    background-color: #374151;
+    color: #f3f4f6;
+    border: 1px solid #4b5563;
+  }
+
+  .btn-secondary:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
   }
 
   .card {
-    @apply bg-white rounded-modern-lg p-6
-           hover:shadow-lg transition-all duration-300;
-    box-shadow: 0 4px 20px rgba(5, 66, 57, 0.15);
+    @apply bg-gray-900 rounded-lg p-6
+           hover:shadow-xl transition-all duration-300;
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
 
   .card:hover {
-    box-shadow: 0 8px 40px rgba(5, 66, 57, 0.22);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 8px 40px rgba(16, 185, 129, 0.1);
   }
 
   .input-field {
-    @apply w-full px-4 py-3 border-2 rounded-modern
-           focus:border-syrian-primary focus:ring-2 focus:ring-syrian-primary/20
-           transition-all duration-200 font-arabic;
-    border-color: #edebe0;
+    @apply w-full px-4 py-3 border-2 rounded-lg
+           focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900
+           transition-all duration-200 font-arabic bg-gray-800 text-white;
+    border-color: #374151;
   }
 
   .input-field:focus {
-    border-color: #054239;
+    border-color: rgba(16, 185, 129, 0.5);
+    outline: none;
+  }
+
+  .input-field::placeholder {
+    color: #6b7280;
   }
 
   .sidebar-nav {
@@ -77,39 +91,42 @@
   }
 
   .sidebar-nav-item {
-    @apply flex items-center gap-3 px-4 py-3 rounded-modern
-           hover:bg-syrian-secondary-light transition-all duration-200
-           font-medium;
-    color: #3d3a3b;
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg
+           hover:bg-gray-800/50 transition-all duration-200
+           font-medium text-sm;
+    color: #9ca3af;
   }
 
   .sidebar-nav-item:hover {
-    color: #054239;
+    color: #e5e7eb;
+    background-color: rgba(55, 65, 81, 0.5);
   }
 
   .sidebar-nav-item.active {
-    background: linear-gradient(135deg, #054239 0%, #428177 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
     color: white;
-    box-shadow: 0 4px 20px rgba(5, 66, 57, 0.15);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
 
   .code-editor {
-    @apply border-2 border-syrian-secondary-light rounded-modern overflow-hidden
-           focus-within:border-syrian-primary focus-within:ring-2 focus-within:ring-syrian-primary/20
+    @apply border-2 rounded-lg overflow-hidden
+           focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-500/20
            transition-all duration-200;
+    border-color: #374151;
   }
 }
 
 @layer utilities {
   .text-gradient-syrian {
-    background: linear-gradient(to left, #054239, #428177);
+    background: linear-gradient(to right, #10b981, #059669);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .text-gradient-gold {
-    background: linear-gradient(to left, #b9a779, #988561);
+    background: linear-gradient(to right, #f59e0b, #d97706);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

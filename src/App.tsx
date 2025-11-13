@@ -9,13 +9,13 @@ import {
   Menu,
   X,
   Sparkles,
+  Terminal,
 } from 'lucide-react';
 import AIAssistant from './components/ai/AIAssistant';
 import CodeEditor from './components/editor/CodeEditor';
 import InfrastructureAutomation from './components/infrastructure/InfrastructureAutomation';
 import PackageManager from './components/packages/PackageManager';
-import { SyrianEagle, SyrianLandmarks } from './components/ui';
-import SyrianPattern from './components/ui/SyrianPattern';
+import { SyrianEagle } from './components/ui';
 
 type Tab = 'editor' | 'ai' | 'infrastructure' | 'packages' | 'about';
 
@@ -51,104 +51,128 @@ function HomePage() {
         return <PackageManager />;
       case 'about':
         return (
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="p-8 max-w-6xl mx-auto space-y-8">
             <div className="text-center">
-              <SyrianEagle size={200} className="mx-auto mb-6" />
-              <h1 className="text-5xl font-bold text-gradient-syrian mb-4 font-arabic">
-                المنصة السورية الشاملة للتطوير
+              <SyrianEagle size={150} className="mx-auto mb-6" />
+              <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-600 bg-clip-text text-transparent">
+                Syrian Development Platform
               </h1>
-              <p className="text-xl text-syrian-neutral-dark font-arabic">
-                دمج bolt.diy و chef مع الهوية البصرية السورية
+              <p className="text-gray-400 text-lg">
+                AI-Powered Development Environment - Built with ❤️ for Syria
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="card">
-                <h2 className="text-2xl font-bold text-syrian-primary-dark mb-4 font-arabic">
-                  🎨 الهوية البصرية السورية
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <Bot size={20} className="text-green-400" />
+                  bolt.diy Features
+                </h2>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                    <span>AI Assistant with 19+ providers</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                    <span>Advanced Code Editor (Monaco)</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                    <span>Code generation with AI</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                    <span>Multi-language support</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <Cloud size={20} className="text-blue-400" />
+                  chef Features
+                </h2>
+                <ul className="space-y-2 text-gray-300">
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    <span>Infrastructure Automation</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    <span>Multi-platform Deployment</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    <span>Package Management</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                    <span>Database Setup</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <Code size={20} className="text-purple-400" />
+                  Tech Stack
+                </h2>
+                <div className="grid grid-cols-2 gap-3 text-sm text-gray-300">
+                  <div>
+                    <h3 className="text-gray-400 mb-2">Frontend</h3>
+                    <ul className="space-y-1">
+                      <li>• React 18</li>
+                      <li>• TypeScript</li>
+                      <li>• Tailwind CSS</li>
+                      <li>• Monaco Editor</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-gray-400 mb-2">Backend</h3>
+                    <ul className="space-y-1">
+                      <li>• Convex</li>
+                      <li>• Supabase</li>
+                      <li>• Vite</li>
+                      <li>• Node.js</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
+                <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                  <Package size={20} className="text-yellow-400" />
+                  Syrian Identity
                 </h2>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-syrian-primary" />
-                    <span className="font-arabic">الأخضر السوري (#054239) - الخصوبة والنمو</span>
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-green-600 to-green-400"></div>
+                    <span className="text-gray-300 text-sm">Syrian Green - Heritage & Growth</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-syrian-secondary" />
-                    <span className="font-arabic">الذهبي (قاسيون) - تراث قاسيون</span>
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-yellow-600 to-yellow-400"></div>
+                    <span className="text-gray-300 text-sm">Qasioun Gold - Mountain Legacy</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-syrian-sand" />
-                    <span className="font-arabic">الرملية (تدمر) - تراث تدمر</span>
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-r from-stone-600 to-stone-400"></div>
+                    <span className="text-gray-300 text-sm">Palmyra Sand - Ancient Wisdom</span>
                   </div>
-                </div>
-              </div>
-
-              <div className="card">
-                <h2 className="text-2xl font-bold text-syrian-primary-dark mb-4 font-arabic">
-                  🦅 رمز العقاب الذهبي
-                </h2>
-                <ul className="space-y-2 text-syrian-neutral-dark font-arabic">
-                  <li>• 14 ريشة جناح تمثل المحافظات السورية</li>
-                  <li>• 5 ريشات ذيل للمناطق الجغرافية</li>
-                  <li>• 3 نجوم للحرية والكرامة والاستمرارية</li>
-                  <li>• يرمز للحرية والقوة والكرامة</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h2 className="text-2xl font-bold text-syrian-primary-dark mb-4 font-arabic">
-                  🤖 ميزات bolt.diy المدمجة
-                </h2>
-                <ul className="space-y-2 text-syrian-neutral-dark font-arabic">
-                  <li>• دعم 19+ مزود AI</li>
-                  <li>• محرر كود متقدم (Monaco Editor)</li>
-                  <li>• توليد الكود بالذكاء الاصطناعي</li>
-                  <li>• دعم متعدد اللغات (JS, TS, Python, React)</li>
-                </ul>
-              </div>
-
-              <div className="card">
-                <h2 className="text-2xl font-bold text-syrian-primary-dark mb-4 font-arabic">
-                  ⚙️ ميزات chef المدمجة
-                </h2>
-                <ul className="space-y-2 text-syrian-neutral-dark font-arabic">
-                  <li>• أتمتة البنية التحتية</li>
-                  <li>• نشر تلقائي على منصات متعددة</li>
-                  <li>• إدارة الحزم البرمجية</li>
-                  <li>• إعداد قواعد البيانات</li>
-                </ul>
-              </div>
-            </div>
-
-            <SyrianLandmarks />
-
-            <div className="card bg-gradient-syrian text-white">
-              <h2 className="text-2xl font-bold mb-4 text-white font-arabic">
-                التقنيات المستخدمة
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="text-center">
-                  <h3 className="font-bold text-white font-arabic">Frontend</h3>
-                  <p className="text-white/90 font-arabic">React 18 + TypeScript</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="font-bold text-white font-arabic">Styling</h3>
-                  <p className="text-white/90 font-arabic">Tailwind CSS</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="font-bold text-white font-arabic">Database</h3>
-                  <p className="text-white/90 font-arabic">Convex + Supabase</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="font-bold text-white font-arabic">AI</h3>
-                  <p className="text-white/90 font-arabic">Multiple Providers</p>
                 </div>
               </div>
             </div>
 
-            <div className="text-center text-syrian-neutral-dark">
-              <p className="text-lg font-arabic">
-                © 2025 المنصة السورية الشاملة للتطوير - مطور بـ ❤️ لسوريا
+            <div className="bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg p-6 text-white">
+              <h2 className="text-2xl font-bold mb-4">Made with ❤️ for Syria</h2>
+              <p className="text-white/90">
+                This platform represents the spirit of Syrian innovation and resilience.
+                Built by developers, for developers, with the aim to empower the Syrian tech community.
+              </p>
+            </div>
+
+            <div className="text-center text-gray-500">
+              <p className="text-sm">
+                © 2025 Syrian Development Platform - All rights reserved
               </p>
             </div>
           </div>
@@ -159,31 +183,29 @@ function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-syrian-sand relative">
-      <SyrianPattern className="absolute inset-0 pointer-events-none" opacity={0.03} />
-
-      <nav className="bg-gradient-syrian text-white px-6 py-4 shadow-syrian-lg relative z-10">
+    <div className="min-h-screen bg-gray-950 text-gray-100">
+      <nav className="bg-gray-900/50 backdrop-blur-md border-b border-gray-800 px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-2 hover:bg-white/10 rounded-lg transition-all"
+              className="lg:hidden p-2 hover:bg-gray-800 rounded-lg transition-all"
             >
               {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-            <SyrianEagle size={48} className="animate-float" />
+            <SyrianEagle size={40} className="animate-float" />
             <div>
-              <h1 className="text-2xl font-bold text-white font-arabic">المنصة السورية</h1>
-              <p className="text-white/90 text-sm font-arabic">
-                دمج bolt.diy + chef مع الهوية السورية
+              <h1 className="text-xl font-bold text-white font-arabic">SyrianDev Platform</h1>
+              <p className="text-gray-400 text-sm font-arabic">
+                AI-Powered Development Environment
               </p>
             </div>
           </div>
-          <div className="hidden md:flex items-center gap-2">
-            <span className="px-4 py-2 bg-white/10 rounded-modern text-sm font-arabic flex items-center gap-2">
-              <Sparkles size={16} className="animate-pulse" />
-              v1.0.0
-            </span>
+          <div className="hidden md:flex items-center gap-3">
+            <div className="px-3 py-1.5 bg-gray-800 rounded-lg text-xs font-mono text-gray-300 border border-gray-700">
+              <span className="text-green-400">●</span> Connected
+            </div>
+            <span className="text-xs text-gray-500 font-mono">v1.0.0</span>
           </div>
         </div>
       </nav>
@@ -195,15 +217,18 @@ function HomePage() {
               sidebarOpen ? 'translate-x-0' : '-translate-x-full'
             }
             lg:translate-x-0 fixed lg:static inset-y-0 left-0 z-50
-            w-64 bg-white/95 backdrop-blur-sm border-r-2 border-syrian-secondary-light
+            w-64 bg-gray-900/95 backdrop-blur-md border-r border-gray-800
             transition-transform duration-300 ease-in-out
             lg:transition-none h-[calc(100vh-5rem)]
           `}
         >
-          <div className="p-4 border-b-2 border-syrian-secondary-light">
-            <h2 className="font-bold text-syrian-primary-dark font-arabic text-lg">الأدوات</h2>
+          <div className="p-4 border-b border-gray-800">
+            <div className="flex items-center gap-2 text-sm text-gray-400 font-mono">
+              <Terminal size={16} className="text-green-400" />
+              <span>Worskpace</span>
+            </div>
           </div>
-          <nav className="p-4 space-y-2">
+          <nav className="p-3 space-y-1">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
@@ -214,16 +239,16 @@ function HomePage() {
                     setSidebarOpen(false);
                   }}
                   className={`
-                    w-full flex items-center gap-3 px-4 py-3 rounded-modern transition-all
+                    w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200
                     ${
                       activeTab === tab.id
-                        ? 'bg-gradient-syrian text-white shadow-syrian transform scale-105'
-                        : 'text-syrian-neutral-dark hover:bg-syrian-secondaryLight hover:text-syrian-primary'
+                        ? 'bg-gray-800 text-white border border-gray-700 shadow-lg'
+                        : 'text-gray-400 hover:bg-gray-800/50 hover:text-gray-200'
                     }
                   `}
                 >
-                  <Icon size={20} />
-                  <span className="font-medium font-arabic">{tab.label}</span>
+                  <Icon size={18} className={activeTab === tab.id ? 'text-green-400' : ''} />
+                  <span className="font-medium text-sm">{tab.label}</span>
                 </button>
               );
             })}
@@ -237,8 +262,8 @@ function HomePage() {
           />
         )}
 
-        <main className="flex-1 p-6 lg:p-8 overflow-auto">
-          <div className="relative">
+        <main className="flex-1 bg-gray-950 overflow-auto">
+          <div className="h-full">
             {renderContent()}
           </div>
         </main>
