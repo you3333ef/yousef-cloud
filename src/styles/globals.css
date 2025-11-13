@@ -19,9 +19,10 @@
   }
 
   body {
-    @apply bg-syrian-sand text-gray-700 font-arabic antialiased;
+    @apply bg-slate-50 text-gray-700 font-arabic antialiased;
     direction: rtl;
     color: #3d3a3b;
+    background-color: #edebe0;
   }
 
   html {
@@ -31,21 +32,33 @@
 
 @layer components {
   .btn-primary {
-    @apply px-6 py-3 bg-gradient-syrian text-white rounded-modern font-semibold
-           hover:shadow-syrian-md transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-syrian-primary focus:ring-offset-2;
+    @apply px-6 py-3 text-white rounded-modern font-semibold
+           hover:shadow-lg transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background: linear-gradient(135deg, #054239 0%, #428177 100%);
+    border-color: #054239;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 30px rgba(5, 66, 57, 0.18);
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-syrian-secondary rounded-modern font-semibold
+    @apply px-6 py-3 rounded-modern font-semibold
            hover:bg-syrian-secondary-dark transition-all duration-300
-           focus:outline-none focus:ring-2 focus:ring-syrian-secondary focus:ring-offset-2;
+           focus:outline-none focus:ring-2 focus:ring-offset-2;
+    background-color: #b9a779;
     color: #002623;
   }
 
   .card {
-    @apply bg-white rounded-modern-lg p-6 shadow-syrian
-           hover:shadow-syrian-lg transition-all duration-300;
+    @apply bg-white rounded-modern-lg p-6
+           hover:shadow-lg transition-all duration-300;
+    box-shadow: 0 4px 20px rgba(5, 66, 57, 0.15);
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 40px rgba(5, 66, 57, 0.22);
   }
 
   .input-field {
@@ -75,7 +88,9 @@
   }
 
   .sidebar-nav-item.active {
-    @apply bg-gradient-syrian text-white shadow-syrian;
+    background: linear-gradient(135deg, #054239 0%, #428177 100%);
+    color: white;
+    box-shadow: 0 4px 20px rgba(5, 66, 57, 0.15);
   }
 
   .code-editor {
@@ -87,11 +102,17 @@
 
 @layer utilities {
   .text-gradient-syrian {
-    @apply bg-gradient-to-l from-syrian-primary to-syrian-primaryLight bg-clip-text text-transparent;
+    background: linear-gradient(to left, #054239, #428177);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .text-gradient-gold {
-    @apply bg-gradient-to-l from-syrian-secondary to-syrian-secondaryDark bg-clip-text text-transparent;
+    background: linear-gradient(to left, #b9a779, #988561);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .animate-gradient {
