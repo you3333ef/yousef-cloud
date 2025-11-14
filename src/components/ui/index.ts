@@ -36,3 +36,9 @@ export * from './TabsWithSlider';
 // Tooltip components
 export { default as WithTooltip } from './Tooltip';
 export { Tooltip } from './Tooltip';
+
+// Syrian-themed components
+export { default as SyrianEagle } from './SyrianEagle';
+export { SyrianPattern } from './SyrianPattern';
+export { SyrianLoading } from './SyrianLoading';
+export { SyrianLandmarks } from './SyrianLandmarks';
